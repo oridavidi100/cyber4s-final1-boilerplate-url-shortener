@@ -16,5 +16,15 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oridavidi100/cyber4s-final1-boilerplate-url-shortener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/oridavidi100/cyber4s-final1-boilerplate-url-shortener/issues"
+  },
+  "homepage": "https://github.com/oridavidi100/cyber4s-final1-boilerplate-url-shortener#readme"
 }
