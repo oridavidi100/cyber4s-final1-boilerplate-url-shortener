@@ -1,30 +1,18 @@
 
 import "./styles/public/style.css"
-import { selectComponent } from "./js/selectComponent";
+document.getElementById("submit").addEventListener("click",shortApi)
 
-// const app = document.querySelector("#root");
-// const options = [
-//   {
-//     value: "",
-//     text: "Select",
-//   },
-//   {
-//     value: "ip",
-//     text: "Get IP",
-//   },
-//   {
-//     value: "device",
-//     text: "Get Device",
-//   },
-//   {
-//     value: "os",
-//     text: "Get Operating System",
-//   },
-//   {
-//     value: "browser",
-//     text: "Get Browser",
-//   },
-// ];
+async function shortApi(){
+    let longUrl=document.getElementById("url_input").value
+   try{
+    let response= await axios.post("http://localhost:3000/api",{
+        "longUrl":longUrl
+    })
+    document.getElementById("short").innerText="your new url   :"+(response.data)
+}  
+catch(error){
+    console.log(error.response.data.error)
+    document.getElementById("short").innerText=(error.response.data.error)
+}
+}
 
-// const select = selectComponent(options);
-// app.append(select);

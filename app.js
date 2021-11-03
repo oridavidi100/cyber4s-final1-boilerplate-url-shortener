@@ -10,7 +10,8 @@ app.use(cors({
 }));
 
 app.use(express.json())
-
+const {urlHandler} = require("./backEnd/middleware/urlHandler");
+const {errorHandlerMiddleware} = require("./backEnd/middleware/errorHandler")
 
 app.use("/", express.static(`./fronte/dist`));
 
@@ -20,7 +21,11 @@ app.get("/", (req, res) => {
 const urlsRouters=require("./backEnd/routers/urlsRouters")
 
 
-app.use("/api" , urlsRouters)
+app.use("/api" ,urlHandler, urlsRouters)
+
+
+app.use(errorHandlerMiddleware)
+
 
 
 app.listen(PORT, () => {
