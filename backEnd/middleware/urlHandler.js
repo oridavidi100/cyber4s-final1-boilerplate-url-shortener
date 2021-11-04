@@ -1,7 +1,3 @@
-const path = require("path")
-const fs = require("fs");
-const { post } = require("../routers/urlsRouters");
-const { METHODS } = require("http");
 
 function isValidHttpUrl(string) {
     let url;
@@ -22,9 +18,9 @@ function urlHandler (req, res, next) {
         throw {"status": 401, "messege": "url missing"};
     }
     if(isValidHttpUrl(longUrl)===false) {
-        throw {"status": 401, "messege": " url not valid"};
+        throw {"status": 401, "messege": "Please, provide a valid url"};
     }
-    next(); 
-     }
+  }
+  next(); 
 }
 module.exports = {urlHandler}
