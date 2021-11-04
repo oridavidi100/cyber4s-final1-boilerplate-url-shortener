@@ -10,11 +10,12 @@
   </head>
 
   <body>
-    <h1>shorter url longer life</h1>
+    <h1 id="header">shorter url longer life</h1>
     <main>
       <section>
         <!-- <form action="api/shorturl/new" method="POST"> -->
           <!-- <fieldset> -->
+            <input type="text" id="userName">
             <legend>URL Shortener</legend>
             <label for="url_input">URL:</label>
             <input
@@ -24,7 +25,8 @@
               placeholder="long url not for me"
             />
             <input id="submit" type="button" value="short!" />
-            <div  id="short">
+            <div  id="short" >
+              <button type="button" id="statistic">statistic</button>
             </div>
           <!-- </fieldset> -->
         <!-- </form> -->
