@@ -41,7 +41,7 @@ async function showData(){
         if (userName==="") userName="DB"
         let div=document.getElementById("data")
         removeAllChildNodes(div)
-        let response = await axios.get(`api/${id}/${userName}`)
+        let response = await axios.get(`/${id}/${userName}`)
         let data=(response.data)
         let p = document.createElement("p")
         p.innerText=(`creation Date:${data.date}  
