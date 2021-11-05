@@ -11,12 +11,12 @@ router.post("/",(req,res)=>{
     let  userName=req.body.userName
      if (userName==="") userName="DB"
     const iD='_' + Math.random().toString(36).substr(2, 9)
-    const shortUrl=baseUrl +"/"+ iD+".com";
+    const shortUrl=baseUrl +"/"+ iD;
     if (fs.existsSync(`./backEnd/${userName}.json`)) {
         dataBase = JSON.parse(fs.readFileSync(`./backEnd/${userName}.json`, "utf-8"));
         for (let key in dataBase){
             if (dataBase[key].longUrl===longUrl){
-                return res.send({"shortUrl":`${baseUrl}/${key}/${userName}.com`,"id":key})
+                return res.send({"shortUrl":`${baseUrl}/${key}/${userName}`,"id":key})
             }
         }
         dataBase[iD] ={"longUrl":longUrl,"date":new Date(),"numOfEntr":0};
