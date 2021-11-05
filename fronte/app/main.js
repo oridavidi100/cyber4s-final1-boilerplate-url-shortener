@@ -1,10 +1,22 @@
 
 import "./styles/public/style.css"
 document.getElementById("submit").addEventListener("click",shortApi)
- document.getElementById("statistic").addEventListener("click",showData)
+document.getElementById("statistic").addEventListener("click",showData)
+document.getElementById("copy").addEventListener("click",copyTextfunction)
 let id ;
 let userName;
+let shortUrl;
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 async function shortApi(){
+    let div=document.getElementById("shorter")
+    removeAllChildNodes(div)
+    removeAllChildNodes(document.getElementById("data"))
     userName=document.getElementById("userName").value
     let longUrl=document.getElementById("url_input").value
     document.getElementById("short").style.display ="block"
@@ -13,28 +25,34 @@ async function shortApi(){
         "userName":userName,
         "longUrl":longUrl
     })
+    shortUrl=response.data.shortUrl
     let p=document.createElement("p")
-    p.innerText="your new url:"+"  "+(response.data.shortUrl)
-    document.getElementById("short").appendChild(p)
+    p.innerText="your new url:"+"  "+(shortUrl)
+    div.appendChild(p)
      id=response.data.id
 }  
 catch(error){
-    console.log(error.response.data.error)
-    document.getElementById("short").innerText=(error.response.data.error)
+    div.innerText=(error.response.data.error)
 }
 }
 
 
 async function showData(){
-        console.log(id)
+        if (userName==="") userName="DB"
+        let div=document.getElementById("data")
+        removeAllChildNodes(div)
         let response = await axios.get(`http://localhost:3000/api/statistic/${id}/${userName}`)
         let data=(response.data)
-        console.log(response.data.date)
-        console.log(response.data.redirectCount)
-        let div=document.getElementById("short")
         let p = document.createElement("p")
-        p.innerText=(`Date:${data.date}  
-        redirectCount:${data.redirectCount}`)
+        p.innerText=(`creation Date:${data.date}  
+        redirect Count:${data.redirectCount}`)
         div.appendChild(p)
-    
 }  
+
+function copyTextfunction() {
+    /* Get the text field */
+    var copyText =shortUrl;
+    console.log(shortUrl)
+    const url = copyText.split('copy')[0];
+    navigator.clipboard.writeText(url);
+  }

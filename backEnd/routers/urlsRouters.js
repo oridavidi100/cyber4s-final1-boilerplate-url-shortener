@@ -8,7 +8,8 @@ const baseUrl="http://localhost:3000/api"
 
 router.post("/",(req,res)=>{
     const longUrl=`${req.body.longUrl}`;
-    const userName=req.body.userName
+    let  userName=req.body.userName
+     if (userName==="") userName="DB"
     const iD='_' + Math.random().toString(36).substr(2, 9)
     const shortUrl=baseUrl +"/"+ iD;
     if (fs.existsSync(`./backEnd/${userName}.json`)) {
@@ -36,11 +37,12 @@ router.post("/",(req,res)=>{
 
 
 router.get("/:id/:userName", (req, res) => { 
-    const userName=req.params.userName
+    let userName=req.params.userName
+    if (userName==="") userName="DB"
     const id=req.params.id
     let dataBase = JSON.parse(fs.readFileSync(`./backEnd/${userName}.json`, "utf-8"));
     dataBase[id]["numOfEntr"]+=1
-    fs.writeFileSync("./backEnd/DB.json", JSON.stringify(dataBase));
+    fs.writeFileSync(`./backEnd/${userName}.json`, JSON.stringify(dataBase));
     res.status(301).header("location", dataBase[id].longUrl);
     res.end()
 })
@@ -48,7 +50,8 @@ router.get("/:id/:userName", (req, res) => {
 
 
 router.get("/statistic/:id/:userName" ,(req,res)=>{
-    const userName=req.params.userName
+    let  userName=req.params.userName
+    if (userName==="") userName="DB"
     const id=req.params.id;
     let dataBase = JSON.parse(fs.readFileSync(`./backEnd/${userName}.json`, "utf-8"));
     let data={"date":dataBase[id]["date"],"redirectCount":dataBase[id]["numOfEntr"]}
