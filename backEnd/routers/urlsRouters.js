@@ -4,19 +4,19 @@ const router = express.Router();
 const fs=require('fs')
 const path = require("path");
 
-const baseUrl="https://shorturl-ori.herokuapp.com/"
+const baseUrl="https://shorturl-ori.herokuapp/"
 
 router.post("/",(req,res)=>{
     const longUrl=`${req.body.longUrl}`;
     let  userName=req.body.userName
      if (userName==="") userName="DB"
     const iD='_' + Math.random().toString(36).substr(2, 9)
-    const shortUrl=baseUrl +"/"+ iD;
+    const shortUrl=baseUrl +"/"+ iD+".com";
     if (fs.existsSync(`./backEnd/${userName}.json`)) {
         dataBase = JSON.parse(fs.readFileSync(`./backEnd/${userName}.json`, "utf-8"));
         for (let key in dataBase){
             if (dataBase[key].longUrl===longUrl){
-                return res.send({"shortUrl":`${baseUrl}/${key}/${userName}`,"id":key})
+                return res.send({"shortUrl":`${baseUrl}/${key}/${userName}.com`,"id":key})
             }
         }
         dataBase[iD] ={"longUrl":longUrl,"date":new Date(),"numOfEntr":0};
