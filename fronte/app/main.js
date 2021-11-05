@@ -21,7 +21,7 @@ async function shortApi(){
     let longUrl=document.getElementById("url_input").value
     document.getElementById("short").style.display ="block"
    try{
-    let response= await axios.post("",{
+    let response= await axios.post("/api",{
         "userName":userName,
         "longUrl":longUrl
     })
@@ -41,7 +41,7 @@ async function showData(){
         if (userName==="") userName="DB"
         let div=document.getElementById("data")
         removeAllChildNodes(div)
-        let response = await axios.get(`/${id}/${userName}`)
+        let response = await axios.get(`api/${id}/${userName}`)
         let data=(response.data)
         let p = document.createElement("p")
         p.innerText=(`creation Date:${data.date}  
