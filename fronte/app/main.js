@@ -21,7 +21,7 @@ async function shortApi(){
     let longUrl=document.getElementById("url_input").value
     document.getElementById("short").style.display ="block"
    try{
-    let response= await axios.post("/",{
+    let response= await axios.post("",{
         "userName":userName,
         "longUrl":longUrl
     })
