@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
-#shorter{
+/* #shorter{
   width: 5em;
-}
+} */
 input{
   border: 0.1em solid;
   border-radius: 1em;
@@ -202,16 +202,14 @@ footer {
   color: #ffffff;
 }
 
-#header{
-  /* font-family:'Times New Roman', Times, serif; */
-}
+
 #short{
   position: block;
-  width: 33%;
+  width: 20%;
   height: auto;
   margin: 0 auto;
   overflow: hidden;
-  padding: 20px;
+  padding:20px;
   text-align: center;
   background-color:blanchedalmond;
   display:none;
