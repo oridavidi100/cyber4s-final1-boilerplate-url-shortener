@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+#shorter{
+  width: 5em;
+}
 input{
   border: 0.1em solid;
   border-radius: 1em;
