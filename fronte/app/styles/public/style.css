@@ -28,8 +28,8 @@ button{
   text-decoration: none;
   text-transform: uppercase;
   /* padding: 10px 23px; */
-  width: 5em;
-  height: 5em;
+  width: 5.9em;
+  height: 3.9em;
   background-color: #182e9b;
   transition: transform 500ms;
   /* background-position 800ms $ease-in-out-back;
@@ -106,7 +106,7 @@ footer {
   font-family: "Poppins", sans-serif;
   height: 70px;
   font-size: 15px;
-  padding-bottom: auto;
+  padding-bottom: 1.5em;
 }
 
 *:focus,
