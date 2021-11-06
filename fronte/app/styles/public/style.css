@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+input{
+  border: 0.1em solid;
+  border-radius: 1em;
+
+  text-align: center;
+  font-size: 0.7em;
+  font-style: italic;
+  letter-spacing: 0.05em;
+
+  transition: all .5s ease-in-out;
+  /* background-color: #b3ecf0; */
+  min-width: 300px;
+}
 body {
   font-size:37px;
   color: #222;
