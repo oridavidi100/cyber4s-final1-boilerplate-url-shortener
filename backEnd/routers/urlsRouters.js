@@ -4,7 +4,7 @@ const router = express.Router();
 const fs=require('fs')
 const path = require("path");
 
-const baseUrl="https://shorturl-ori.herokuapp"
+const baseUrl="https://shorturl-ori.herokuapp.com/api"
 
 router.post("/",(req,res)=>{
     const longUrl=`${req.body.longUrl}`;
