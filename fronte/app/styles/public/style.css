@@ -4,7 +4,7 @@ input{
   border-radius: 1em;
 
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.35em;
   font-style: italic;
   letter-spacing: 0.05em;
 
@@ -27,7 +27,7 @@ button{
   font-size:0.7854rem;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px 23px;
+  /* padding: 10px 23px; */
   background-color: #182e9b;
   transition: transform 500ms;
   /* background-position 800ms $ease-in-out-back;
@@ -126,7 +126,7 @@ footer {
   margin-left: 25px;
   width: 10px;
   height: 10px;
-  font-size: 27px;
+  font-size: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
