@@ -28,6 +28,7 @@ async function shortApi(){
     shortUrl=response.data.shortUrl
     let p=document.createElement("p")
     p.innerText="your new url:"+"  "+(shortUrl)
+    p.setAttribute("id","shorter")
     div.appendChild(p)
      id=response.data.id
 }  
