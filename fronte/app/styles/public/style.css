@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 body {
-  font-size:27px;
+  font-size:37px;
   color: #222;
   text-align: center;
   line-height: 1.4em;
@@ -11,7 +11,7 @@ body {
 button{
   color: white;
   font-weight: bold;
-  font-size:0.4rem;
+  font-size:0.7854rem;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px 23px;
@@ -89,7 +89,7 @@ footer {
   bottom:0%;
   font-family: "Poppins", sans-serif;
   height: 70px;
-  font-size: 16px;
+  font-size: 26px;
 }
 
 *:focus,
@@ -112,7 +112,7 @@ footer {
   margin-left: 25px;
   width: 10px;
   height: 10px;
-  font-size: 18px;
+  font-size: 27px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +126,7 @@ footer {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 10px;
+  font-size: 19.5px;
   background-color: #ffffff;
   color: #ffffff;
   padding: 5px 8px;
