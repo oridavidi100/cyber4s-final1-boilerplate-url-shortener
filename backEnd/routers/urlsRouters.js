@@ -26,7 +26,7 @@ router.post("/",(req,res)=>{
     else {
         fs.writeFileSync(`./backEnd/${userName}.json`, "{}");
         const dataBase = JSON.parse(fs.readFileSync(`./backEnd/${userName}.json`, "utf-8"));
-        dataBase[iD] ={"longUrl":longUrl,"date":new Date(),"numOfEntr":0};
+        dataBase[iD] ={"longUrl":longUrl,"date":moment().format('LL'),"numOfEntr":0};
         fs.writeFileSync(`./backEnd/${userName}.json`, JSON.stringify(dataBase));
         res.send({"shortUrl":`${shortUrl}/${userName}`,"id":iD});
       }
