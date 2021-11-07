@@ -20,7 +20,7 @@ router.post("/",(req,res)=>{
                 return res.send({"shortUrl":`${baseUrl}/${key}/${userName}`,"id":key})
             }
         }
-        dataBase[iD] ={"longUrl":longUrl,"date":new Date(),"numOfEntr":0};
+        dataBase[iD] ={"longUrl":longUrl,"date":moment().format('LL'),"numOfEntr":0};
         fs.writeFileSync(`./backEnd/${userName}.json`, JSON.stringify(dataBase));
         res.send({"shortUrl":`${shortUrl}/${userName}`,"id":iD});
     }
